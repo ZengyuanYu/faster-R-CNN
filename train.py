@@ -14,8 +14,6 @@ from utils import array_tool as at
 from utils.vis_tool import visdom_bbox
 from utils.eval_tool import eval_detection_voc
 
-# fix for ulimit
-# https://github.com/pytorch/pytorch/issues/973#issuecomment-346405667
 import resource
 
 rlimit = resource.getrlimit(resource.RLIMIT_NOFILE)
@@ -63,11 +61,11 @@ def train(**kwargs):
                                        pin_memory=True
                                        )
     faster_rcnn = FasterRCNNVGG16()
-    print('model construct completed')
+    print('网络模型创建完成')
     trainer = FasterRCNNTrainer(faster_rcnn).cuda()
     if opt.load_path:
         trainer.load(opt.load_path)
-        print('load pretrained model from %s' % opt.load_path)
+        print('从 %s 载入预训练模型' % opt.load_path)
 
     trainer.vis.text(dataset.db.label_names, win='labels')
     best_map = 0
