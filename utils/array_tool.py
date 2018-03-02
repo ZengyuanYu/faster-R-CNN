@@ -51,7 +51,7 @@ def scalar(data):
     if isinstance(data, torch.autograd.Variable):
         return data.data.view(1)[0]
 
-#测试scalar
-a = np.array([
-    5])
-print(scalar(totensor(a)))
+# #测试scalar
+# a = np.array([
+#     5])
+# print(scalar(totensor(a)))

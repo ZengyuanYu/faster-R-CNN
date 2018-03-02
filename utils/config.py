@@ -5,7 +5,7 @@ from pprint import pprint
 
 """
 在训练的过程中提供配置，包括图片尺寸，参数和训练模型
-使用方式：命令行后面加上
+使用方式：默认值存在，修改在命令行后面加上相关参数命令
 eg. --test_num=1000, --voc-data-dir='./data/'
 """
 class Config:
