@@ -1,0 +1,8 @@
+visdom
+scikit-image
+tqdm
+fire
+pprint
+matplotlib
+ipdb
+cython
